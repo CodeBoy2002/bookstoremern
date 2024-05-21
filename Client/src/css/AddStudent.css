@@ -1,0 +1,68 @@
+/* Container for the form */
+.student-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 20px;
+  }
+  
+  /* Form styling */
+  .student-form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px; /* Max width for the form */
+    width: 100%; /* Full width for smaller screens */
+  }
+  
+  /* Heading styling */
+  .student-form h2 {
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Dark grey text */
+    font-size: 24px; /* Larger font size */
+    text-align: center; /* Centered heading */
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 15px; /* Space below each form group */
+  }
+  
+  /* Label styling */
+  .form-group label {
+    display: block; /* Block-level for spacing */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold text for labels */
+    color: #333; /* Dark grey text */
+  }
+  
+  /* Input styling */
+  .form-group input[type="text"] {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Button styling */
+  button[type="submit"] {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  /* Button hover effect */
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
