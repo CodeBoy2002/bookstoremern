@@ -14,7 +14,7 @@ const UpdateBook = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/books/book/${id}`)
+            .get(`https://bookstore-manage.vercel.app/books/book/${id}`)
             .then(res => {
                 setTitle(res.data.title)
                 setAuthor(res.data.author)
@@ -28,7 +28,7 @@ const UpdateBook = () => {
         e.preventDefault()
         try {
             axios
-                .put(`http://localhost:5000/books/update/${id}`, { title, author, genre, yearPublish })
+                .put(`https://bookstore-manage.vercel.app/books/update/${id}`, { title, author, genre, yearPublish })
                 .then(res => {
                     if(res.data.updated) {
                         navigate('/books')

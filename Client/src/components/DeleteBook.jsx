@@ -8,7 +8,7 @@ const DeleteBook = () => {
 
     useEffect(() => {
         axios
-            .delete(`http://localhost:5000/books/delete/${id}`)
+            .delete(`https://bookstore-manage.vercel.app/books/delete/${id}`)
             .then(res => {
                 if(res.data.deleted) {
                     navigate('/books')

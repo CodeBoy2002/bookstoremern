@@ -6,7 +6,7 @@ const Home = ({ setRoles }) => {
   axios.defaults.withCredentials = true
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/auth/verify`)
+      .get(`https://bookstore-manage.vercel.app/auth/verify`)
       .then(res => {
         if(res.data.login) {
           setRoles(res.data.role)

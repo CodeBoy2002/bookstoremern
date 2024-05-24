@@ -14,7 +14,7 @@ const AddBook = () => {
       e.preventDefault();
       console.log("Handling");
       axios
-          .post(`http://localhost:5000/books/add`, { title, author, genre, yearPublish })
+          .post(`https://bookstore-manage.vercel.app/books/add`, { title, author, genre, yearPublish })
           .then(res => {
             if(res.data.added) {
               navigate('/books')

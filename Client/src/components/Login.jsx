@@ -14,7 +14,7 @@ const Login = ({setRoles}) => {
     e.preventDefault();
     console.log("Handling");
     axios
-      .post(`http://localhost:5000/auth/login`, { username, password, role })
+      .post(`https://bookstore-manage.vercel.app/auth/login`, { username, password, role })
       .then(res => {
         if(res.data.login && res.data.role === 'admin') {
           setRoles('admin')

@@ -14,7 +14,7 @@ const AddStudent = () => {
     e.preventDefault();
     console.log("Handling");
     axios
-        .post(`http://localhost:5000/student/register`, { username, password, roll, grade })
+        .post(`https://bookstore-manage.vercel.app/student/register`, { username, password, roll, grade })
         .then(res => {
           if(res.data.registered) {
             navigate('/dashboard')

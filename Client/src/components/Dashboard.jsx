@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/dashboard`)
+      .get(`https://bookstore-manage.vercel.app/dashboard`)
       .then(res => {
         if(res.data.ok) {
           setStudents(res.data.student)

@@ -7,7 +7,7 @@ const Books = ({ roles }) => {
   const [books, setBooks] = useState([])
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/books/add`)
+      .get(`https://bookstore-manage.vercel.app/books/add`)
       .then(res => {
         setBooks(res.data)
         console.log(res.data);

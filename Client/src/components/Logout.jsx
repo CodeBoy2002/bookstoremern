@@ -6,7 +6,7 @@ const Logout = ({ setRoles }) => {
     const navigate = useNavigate()
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/auth/logout`)
+            .get(`https://bookstore-manage.vercel.app/auth/logout`)
             .then(res => {
                 if(res.data.logout) {
                     setRoles('')
