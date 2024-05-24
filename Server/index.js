@@ -15,9 +15,11 @@ import './db.js'
 
 const app = express() 
  
+app.use(cors({
+    origin: ['https://bookstore-manage.vercel.app']
+}))
 app.use(express.json())
 
-app.use(cors())
 
 // ({
 //     origin: [`https://bookstore-manage.vercel.app`],
