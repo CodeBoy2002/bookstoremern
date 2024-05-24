@@ -26,6 +26,10 @@ app.use('/auth', adminRouter)
 app.use('/student', studentRouter)
 app.use('/books', bookRouter)
 
+app.get('/', (req, res) => {
+    res.json({ message: "Hello world" })
+})
+
 app.get('/dashboard', async (req, res) => {
     try {
         const student = await Student.countDocuments()
