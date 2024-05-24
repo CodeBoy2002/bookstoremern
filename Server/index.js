@@ -15,16 +15,11 @@ import './db.js'
 
 const app = express() 
  
-app.use(cors({
-    origin: ['https://bookstore-manage.vercel.app']
-}))
 app.use(express.json())
-
-
-// ({
-//     origin: [`https://bookstore-manage.vercel.app`],
-//     credentials: true
-// })
+app.use(cors({
+    origin: [`https://bookstore-interface.vercel.app`],
+    credentials: true
+}))
 app.use(cookieParser())
 
 app.use('/auth', adminRouter)
