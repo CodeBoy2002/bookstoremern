@@ -15,7 +15,12 @@ const AddStudent = () => {
     console.log("Handling");
     axios
         .post(`http://localhost:5000/student/register`, { username, password, roll, grade })
-        .then(res => console.log(res))
+        .then(res => {
+          if(res.data.registered) {
+            navigate('/dashboard')
+          }
+          console.log(res);
+        })
         .catch(error => console.log(error))
   };
 
@@ -24,7 +29,7 @@ const AddStudent = () => {
       <form className="student-form" onSubmit={handleSubmit}>
         <h2>Add Student</h2>
         <div className="form-group">
-          <label htmlFor="roll">Roll No:</label>
+          <label htmlFor="roll">Roll No:</label> 
           <input
             type="text"
             id="roll"

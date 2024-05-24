@@ -1,34 +1,51 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
 import '../css/AddBook.css'
+import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
 
-const AddBook = () => {
+const UpdateBook = () => {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [genre, setGenre] = useState("");
     const [yearPublish, setYearPublish] = useState("");
     const navigate = useNavigate()
-  
+    const { id } = useParams() 
+
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:5000/books/book/${id}`)
+            .then(res => {
+                setTitle(res.data.title)
+                setAuthor(res.data.author)
+                setGenre(res.data.genre)
+                setYearPublish(res.data.yearPublish)
+            })
+            .catch(error => console.log(error))
+    }, [])
+
     const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Handling");
-      axios
-          .post(`http://localhost:5000/books/add`, { title, author, genre, yearPublish })
-          .then(res => {
-            if(res.data.added) {
-              navigate('/books')
-            } else {
-                console.log(res);
-            }
-          })
-          .catch(error => console.log(error))
-    };
-  
-    return (
-      <div className="student-form-container">
+        e.preventDefault()
+        try {
+            axios
+                .put(`http://localhost:5000/books/update/${id}`, { title, author, genre, yearPublish })
+                .then(res => {
+                    if(res.data.updated) {
+                        navigate('/books')
+                    } else {
+                        console.log(res);
+                    }
+                })
+                .catch(error => console.log(error))
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+  return (
+    <div className="student-form-container">
         <form className="student-form" onSubmit={handleSubmit}>
-          <h2>Add Book</h2>
+          <h2>Update Book</h2>
           <div className="form-group">
             <label htmlFor="title">Title:</label> 
             <input
@@ -69,10 +86,10 @@ const AddBook = () => {
               onChange={(e) => setYearPublish(e.target.value)}
             />
           </div>
-          <button type="submit">Add Book</button>
+          <button type="submit">Update Book</button>
         </form>
       </div>
-    );
+  )
 }
 
-export default AddBook
+export default UpdateBook
