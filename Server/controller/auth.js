@@ -40,7 +40,7 @@ const loginUser = async (req, res) => {
 }
 
 const verifyAdmin = (req, res, next) => {
-    const token = req.cookies.token
+    const token = req.Cookies.token
     if(!token) {
         return res.json({ message: "Invalid Admin" })
     } else {
